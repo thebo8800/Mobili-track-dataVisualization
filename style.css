@@ -1,0 +1,14 @@
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    min-height: 75px;
+    width: 100vw;
+}
+
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
