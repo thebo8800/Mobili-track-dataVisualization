@@ -13,9 +13,9 @@
 
 <body>
 
-   <div class="sticky-top" style="background-color: white;">
+   <div class="sticky-top" style="background-color: white;" >
     <div id="header">Dashboard</div>
-    <ul id="nav-bar" class="nav nav-pills nav-fill">
+    <ul id="nav-bar" class="nav nav-pills nav-fill" >
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Active</a>
         </li>
@@ -35,17 +35,23 @@
   <div class="main">
 
 
-        <div class='module'style="grid-column: 1 / 5; grid-row: 1 / 3;">
+        <div class='module'style="grid-column: 1 / 3; grid-row: 1 / 2;">
             
                 <canvas id="chart1" style="max-height: 300px;"></canvas>
+                
               
         </div>
-        <div class='module' style="grid-column: 1 / 5; grid-row: 3 / 5;""></div>
-        <div class='module'style="grid-column: 1 / 2; grid-row: 5 / 6;""></div>
-        <div class='module'style="grid-column: 2 / 3; grid-row: 5 / 6;""></div>
-        <div class='module'style="grid-column: 3 / 4; grid-row: 5 / 6;""></div>
-        <div class='module'style="grid-column: 4 / 5; grid-row: 5 / 6;""></div>
-        <div class='module'style="grid-column: 5 / 7; grid-row: 1 / -1;""></div>
+        <div class='module' style="grid-column: 1 / 3; grid-row: 2 / 3;"">
+            <canvas id="chart2" style="max-height: 300px; max-width: 80%;"></canvas>
+            
+        </div>
+        <div class='module'style="grid-column: 3 / 4; grid-row: 1 / 2;"">
+            <canvas id="chart3" style="max-height: 300px;"></canvas>
+        </div>
+   
+        <div class='module'style="grid-column: 3 / 4; grid-row: 2 / 3; display: flex; flex-direction: column">
+            
+            <canvas id="chart4" style="max-height: 300px;"></canvas>
 
 
       </div>
@@ -83,6 +89,106 @@
     borderWidth: 1
   }]
           },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+
+        const ctx2 = document.getElementById('chart2');
+        new Chart(ctx2, {
+          type: 'line',
+          data: {labels: labels,
+            datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+    tension: 0.1
+  }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+
+        const ctx3 = document.getElementById('chart3');
+
+        data = {
+  labels: [
+    'Red',
+    'Blue',
+    'Yellow'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+        new Chart(ctx3, {
+          type: 'doughnut',
+          data: data,
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+
+        const ctx4 = document.getElementById('chart4');
+         data = {
+  labels: [
+    'Eating',
+    'Drinking',
+    'Sleeping',
+    'Designing',
+    'Coding',
+    'Cycling',
+    'Running'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 90, 81, 56, 55, 40],
+    fill: true,
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderColor: 'rgb(255, 99, 132)',
+    pointBackgroundColor: 'rgb(255, 99, 132)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(255, 99, 132)'
+  }, {
+    label: 'My Second Dataset',
+    data: [28, 48, 40, 19, 96, 27, 100],
+    fill: true,
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgb(54, 162, 235)',
+    pointBackgroundColor: 'rgb(54, 162, 235)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(54, 162, 235)'
+  }]
+};
+        new Chart(ctx4, {
+          type: 'radar',
+          data: data,
           options: {
             scales: {
               y: {

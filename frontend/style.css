@@ -21,15 +21,15 @@ body {
 .main {
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 4px;
 
 }
 
-.main>div {
+/* .main>div {
     border: solid black 3px;
-}
+} */
 
 .module {
     display: flex;
