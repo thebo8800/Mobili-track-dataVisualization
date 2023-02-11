@@ -2,7 +2,9 @@
 ##### Junbo Chen, Jake Bailey, Devin Lust, Connor McCabe
 
 
-[<img src="https://user-images.githubusercontent.com/21280827/218285276-d5d6f534-7cb2-427e-a565-b3f7dc76fb56.png" width="12.5%" height="12.5%">](https://engineering.osu.edu/)
+[<img src="https://user-images.githubusercontent.com/21280827/218285276-d5d6f534-7cb2-427e-a565-b3f7dc76fb56.png" width="12.5%" height="12.5%">](https://engineering.osu.edu/) [<img src="https://bdaaosu.org/img/Logo.png" width="12.5%" height="12.5%">](https://bdaaosu.org/)
+
+
 
 
 
