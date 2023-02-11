@@ -1,4 +1,4 @@
-# BDAA Hackathon
+# BDAA Honda Hackathon
 ##### Junbo Chen, Jake Bailey, Devin Lust, Connor McCabe
 
 
