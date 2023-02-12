@@ -66,34 +66,72 @@
     Chart.defaults.color = "#6C7293";
     Chart.defaults.borderColor = "#000000";
 
+    const data = {
+        labels: [
+            'Honda',
+            'Toyota',
+            'Chevrolet',
+            'Ford',
+            'Dodge'
+        ],
+        datasets: [{
+            data: [52, 16, 100, 280, 6],
+            backgroundColor: [
+                'rgba(235, 22, 22, 0.7)',
+                'rgba(255, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 0.5)',
+                'rgba(235, 22, 22, 0.8)',
+                'rgba(235, 22, 22, 0.3)'
+
+            ],
+            hoverOffset: 25
+        }]
+    }
+    const config = {
+        type: 'doughnut',
+        data: data,
+        options: {
+            layout: {
+                padding: {
+                    left: 100
+                }
+            }
+
+
+        }
+    };
+    const ctx = document.getElementById('worldwide-sales');
+    var myChart = new Chart(ctx,
+        config
+    )
 
     // Worldwide Sales Chart
-    var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
-    var myChart1 = new Chart(ctx1, {
-        type: "bar",
-        data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-            datasets: [{
-                label: "USA",
-                data: [15, 30, 55, 65, 60, 80, 95],
-                backgroundColor: "rgba(235, 22, 22, .7)"
-            },
-            {
-                label: "UK",
-                data: [8, 35, 40, 60, 70, 55, 75],
-                backgroundColor: "rgba(235, 22, 22, .5)"
-            },
-            {
-                label: "AU",
-                data: [12, 25, 45, 55, 65, 70, 60],
-                backgroundColor: "rgba(235, 22, 22, .3)"
-            }
-            ]
-        },
-        options: {
-            responsive: true
-        }
-    });
+    // var ctx1 = $("#worldwide-sales").get(0).getContext("2d");
+    // var myChart1 = new Chart(ctx1, {
+    //     type: "bar",
+    //     data: {
+    //         labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+    //         datasets: [{
+    //             label: "USA",
+    //             data: [15, 30, 55, 65, 60, 80, 95],
+    //             backgroundColor: "rgba(235, 22, 22, .7)"
+    //         },
+    //         {
+    //             label: "UK",
+    //             data: [8, 35, 40, 60, 70, 55, 75],
+    //             backgroundColor: "rgba(235, 22, 22, .5)"
+    //         },
+    //         {
+    //             label: "AU",
+    //             data: [12, 25, 45, 55, 65, 70, 60],
+    //             backgroundColor: "rgba(235, 22, 22, .3)"
+    //         }
+    //         ]
+    //     },
+    //     options: {
+    //         responsive: true
+    //     }
+    // });
 
     const fileName = "../data/tripRequest.csv";
 
