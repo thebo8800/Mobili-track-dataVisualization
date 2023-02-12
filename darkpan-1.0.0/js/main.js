@@ -125,7 +125,7 @@
         data: {
             labels: fareArr,
             datasets: [{
-                label: "Salse",
+                label: "Miles/Dollar",
                 data: milesArr,
                 backgroundColor: "rgba(235, 22, 22, .7)",
                 fill: true
