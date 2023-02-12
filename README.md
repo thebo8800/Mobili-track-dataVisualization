@@ -1,5 +1,5 @@
 # BDAA Honda Hackathon
-##### Junbo Chen, Jake Bailey, Devin Lust, Connor McCabe
+##### Junbo Chen, Jake Bailey
 
 
 [<img src="https://user-images.githubusercontent.com/21280827/218285276-d5d6f534-7cb2-427e-a565-b3f7dc76fb56.png" width="12.5%" height="12.5%">](https://engineering.osu.edu/) [<img src="https://bdaaosu.org/img/Logo.png" width="25%" height="25%">](https://bdaaosu.org/) [<img src="https://www.carlogos.org/car-logos/honda-logo-1700x1150.png" width="20%" height="20%">](https://automobiles.honda.com/)
