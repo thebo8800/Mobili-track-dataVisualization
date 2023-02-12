@@ -1,4 +1,4 @@
-let navTabs = document.querySelectorAll('.nav-link');
+let navTabs = document.querySelectorAll('.tab');
 navTabs.forEach(tab => {
     tab.onclick = function () {
         navTabs.forEach(e => {
