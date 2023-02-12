@@ -55,9 +55,13 @@
 
 
       </div>
+      <canvas id="chart5" style="max-height: 300px;"></canvas>
    
       
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
       
       <script>
         const ctx1 = document.getElementById('chart1');
@@ -197,6 +201,29 @@
             }
           }
         });
+
+
+
+        var ctx5 = document.getElementById('chart5').getContext('2d');
+
+var chart = new Chart(ctx5, {
+
+  type: 'bar',
+
+  plugins: [ChartDataSource],
+
+  options: {
+
+    datasource: {
+
+      url: './data/vehicleInfo.xlsx'
+    
+
+    }
+
+  }
+
+});
       </script>
 
 
@@ -211,6 +238,7 @@
     integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
     crossorigin="anonymous"></script>
   <script src="main.js" type="module" defer></script>
+
 </body>
 
 </html>
