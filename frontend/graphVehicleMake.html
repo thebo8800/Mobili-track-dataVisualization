@@ -31,38 +31,35 @@
        "></script>
      <script src="main.js" type="module" defer></script>
      <script>
-          const fileName = "../data/vehicleInfo.csv";
-          Papa.parse(fileName,
-               {
-                    download: true,
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: function (results) {
-                         
-                         let makeArr = [];
-                         for (let i = 0; i < 703; i++) {
-                              let ans = results.data[i].make;
-                              makeArr[i] = ans;
-                         }
-                         function removeDuplicates(makeArr) {
-                              return [...new Set(makeArr)];
-                         }
-                         makeArr.sort();
-                         const ctx1 = document.getElementById('chart1');
-                         labels = makeArr
-                         new Chart(ctx1, {
-                              type: 'pie',
-                              data: {
-                                   labels: labels,
-                                   datasets: [{
-                                        label: makeArr,
-                                        data: [300, 50, 100],
-                                        hoverOffset: 4
-                                   }]
-                              },
-                         });
-                    }
-               })
+          const data = {
+               labels: [
+                    'Honda',
+                    'Toyota',
+                    'Chevrolet',
+                    'Ford',
+                    'Dodge'
+               ],
+               datasets: [{
+                    data: [52, 16, 100, 280, 6],
+                    backgroundColor: [
+                         'rgba(235, 22, 22, 0.7)',
+                         'rgba(255, 22, 22, 0.2)',
+                         'rgba(235, 22, 22, 0.5)',
+                         'rgba(235, 22, 22, 0.8)',
+                         'rgba(235, 22, 22, 0.3)'
+
+                    ],
+                    hoverOffset: 100
+               }]
+          }
+          const config = {
+               type: 'doughnut',
+               data: data,
+          };
+          const ctx = document.getElementById('chart1');
+          var myChart = new Chart(ctx,
+               config
+          )
      </script>
      </body>
 
