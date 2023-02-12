@@ -71,34 +71,25 @@
             'Honda',
             'Toyota',
             'Chevrolet',
+            'Dodge',
             'Ford',
-            'Dodge'
         ],
         datasets: [{
-            data: [52, 16, 100, 280, 6],
+            data: [52, 16, 100, 6, 280],
             backgroundColor: [
-                'rgba(235, 22, 22, 0.7)',
-                'rgba(255, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 1)',
                 'rgba(235, 22, 22, 0.5)',
-                'rgba(235, 22, 22, 0.8)',
-                'rgba(235, 22, 22, 0.3)'
-
+                'rgb(240, 240, 240)',
+                'rgba(235, 22, 22, 0.7)'
             ],
-            hoverOffset: 25
+            borderColor: 'rgb(0, 0, 0)',
+            hoverOffset: 19
         }]
     }
     const config = {
         type: 'doughnut',
         data: data,
-        options: {
-            layout: {
-                padding: {
-                    left: 100
-                }
-            }
-
-
-        }
     };
     const ctx = document.getElementById('worldwide-sales');
     var myChart = new Chart(ctx,
