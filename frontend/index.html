@@ -36,163 +36,66 @@
 
 
         <div class='module'style="grid-column: 1 / 3; grid-row: 1 / 2;">
-            
-                <canvas id="chart1" style="max-height: 300px;"></canvas>
-                
-              
+                <canvas id="chart1" style="max-height: 300px;"></canvas>     
         </div>
-        <div class='module' style="grid-column: 1 / 3; grid-row: 2 / 3;"">
-            <canvas id="chart2" style="max-height: 300px; max-width: 80%;"></canvas>
-            
-        </div>
-        <div class='module'style="grid-column: 3 / 4; grid-row: 1 / 2;"">
-            <canvas id="chart3" style="max-height: 300px;"></canvas>
-        </div>
-   
-        <div class='module'style="grid-column: 3 / 4; grid-row: 2 / 3; display: flex; flex-direction: column">
-            
-            <canvas id="chart4" style="max-height: 300px;"></canvas>
-
-
-      </div>
-      <canvas id="chart5" style="max-height: 300px;"></canvas>
-   
-      
+  
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"></script>
+      <script src="
+  https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js
+  "></script>
+    <script src="main.js" type="module" defer></script>
 
-
-
-      
       <script>
-        const ctx1 = document.getElementById('chart1');
-        labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+
+
+const fileName = "../data/tripRequest.csv";
+let fareArr = [];
+  Papa.parse(fileName, 
+  {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+      console.log(results);
+      let fareArr = [];
+      let milesArr = [];
+      for (let i = 0; i < 67082; i++){
+        let ans = results.data[i].fare;
+        let miles = results.data[i].estimated_miles;
+        fareArr[i] = ans;
+        milesArr[i] = miles;
+
+       
+      }
+
+      milesArr.sort(function(a, b){return a - b});;
+      fareArr.sort(function(a, b){return a - b});;
+
+
+
+      const ctx1 = document.getElementById('chart1');
+        labels = milesArr
         new Chart(ctx1, {
-          type: 'bar',
-          data: {labels: labels,
+          type: 'line',
+          data: {
+  labels: labels,
   datasets: [{
     label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(201, 203, 207, 0.2)'
-    ],
-    borderColor: [
-      'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-      'rgb(153, 102, 255)',
-      'rgb(201, 203, 207)'
-    ],
-    borderWidth: 1
-  }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-
-
-        const ctx2 = document.getElementById('chart2');
-        new Chart(ctx2, {
-          type: 'line',
-          data: {labels: labels,
-            datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
+    data: fareArr,
     fill: false,
     borderColor: 'rgb(75, 192, 192)',
-    tension: 0.1
+    tension: 5
   }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-
-
-        const ctx3 = document.getElementById('chart3');
-
-        data = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
-        new Chart(ctx3, {
-          type: 'doughnut',
-          data: data,
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-
-
-        const ctx4 = document.getElementById('chart4');
-         data = {
-  labels: [
-    'Eating',
-    'Drinking',
-    'Sleeping',
-    'Designing',
-    'Coding',
-    'Cycling',
-    'Running'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 90, 81, 56, 55, 40],
-    fill: true,
-    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    borderColor: 'rgb(255, 99, 132)',
-    pointBackgroundColor: 'rgb(255, 99, 132)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(255, 99, 132)'
-  }, {
-    label: 'My Second Dataset',
-    data: [28, 48, 40, 19, 96, 27, 100],
-    fill: true,
-    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-    borderColor: 'rgb(54, 162, 235)',
-    pointBackgroundColor: 'rgb(54, 162, 235)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(54, 162, 235)'
-  }]
-};
-        new Chart(ctx4, {
-          type: 'radar',
-          data: data,
+},
           options: {
             scales: {
               y: {
@@ -204,40 +107,24 @@
 
 
 
-        var ctx5 = document.getElementById('chart5').getContext('2d');
-
-var chart = new Chart(ctx5, {
-
-  type: 'bar',
-
-  plugins: [ChartDataSource],
-
-  options: {
-
-    datasource: {
-
-      url: './data/vehicleInfo.xlsx'
-    
-
+      
     }
+  })
 
-  }
+        
 
-});
+
+
+  
+
+
+
+
       </script>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
-  <script src="main.js" type="module" defer></script>
+
 
 </body>
 
