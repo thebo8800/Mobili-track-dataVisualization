@@ -44,6 +44,7 @@
 
 
 
+<<<<<<< HEAD
   
 
 
@@ -51,6 +52,11 @@
 
 
 
+=======
+    <div class='module' style="grid-column: 1 / 3; grid-row: 1 / 2;">
+      <canvas id="chart1" style="max-height: 500px; max-width: 500px;"></canvas>
+    </div>
+>>>>>>> e64e82acc44ee6298375cbedf730ac0b70f19a2f
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -67,6 +73,57 @@
   "></script>
     <script src="main.js" type="module" defer></script>
 
+<<<<<<< HEAD
+=======
+    <script>
+
+
+      const fileName = "../data/tripRequest.csv";
+      Papa.parse(fileName,
+        {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          complete: function (results) {
+            console.log(results);
+            let makeArr = [];
+            for (let i = 0; i < 699; i++) {
+              let ans = results.data[i].make;
+              makeArr[i] = ans;
+            }
+            makeArr.sort();;
+            const ctx1 = document.getElementById('chart1');
+            new Chart(ctx1, {
+              type: 'pie',
+              data: {
+                labels: makeArr,
+                datasets: [{
+                  label: 'miles/dollar',
+                  data: makeArr
+                }]
+              },
+
+            });
+
+
+
+
+          }
+        })
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+>>>>>>> e64e82acc44ee6298375cbedf730ac0b70f19a2f
 
 
 
