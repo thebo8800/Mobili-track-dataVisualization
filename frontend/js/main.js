@@ -84,7 +84,7 @@
                 'rgba(235, 22, 22, 0.7)'
             ],
             borderColor: 'rgb(0, 0, 0)',
-            hoverOffset: 19
+            hoverOffset: 25
         }]
     }
     const config = {
