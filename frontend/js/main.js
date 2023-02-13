@@ -102,7 +102,7 @@
 
 
     // Cost of ridesharre by mileage graph
-    const fileName = "../data/tripRequest.csv";
+    let fileName = "../data/tripRequest.csv";
 
     let fareArr = [];
     let milesArr = [];
@@ -160,21 +160,81 @@
 
 
     // pie chart
+
+    fileName = "../data/vehicleInfo.csv";
+    let yearArr = [];
+    Papa.parse(fileName,
+        {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function (results) {
+
+                console.log(results);
+                for (let i = 0; i < results.data.length; i++) {
+                    yearArr[i] = results.data[i].year;
+                }
+                yearArr.sort();
+            }
+        })
+
+
     data = {
         labels: [
-            'Red',
-            'Blue',
-            'Yellow'
+            '2007',
+            '2008',
+            '2009',
+            '2010',
+            '2011',
+            '2012',
+            '2013',
+            '2014',
+            '2015',
+            '2016',
+            '2017',
+            '2018',
+            '2019',
+            '2020',
+            '2021',
         ],
         datasets: [{
             label: 'My First Dataset',
-            data: [300, 50, 100],
+            data: [2, 1, 0, 11, 17, 7, 11, 8, 41, 21, 27, 52, 180, 7, 11],
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                // 'rgb(255, 99, 132)',
+                // 'rgb(54, 162, 235)',
+                // 'rgb(255, 205, 86)',
+                // 'rgb(255, 99, 132)',
+                // 'rgb(54, 162, 235)',
+                // 'rgb(255, 205, 86)',
+                // 'rgb(255, 99, 132)',
+                // 'rgb(54, 162, 235)',
+                // 'rgb(255, 205, 86)',
+                // 'rgb(255, 99, 132)',
+                // 'rgb(54, 162, 235)',
+                // 'rgb(255, 205, 86)',
+                // 'rgb(255, 99, 132)',
+                // 'rgb(54, 162, 235)',
+                // 'rgb(255, 205, 86)',
+
+                'rgba(235, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 1)',
+                'rgba(235, 22, 22, 0.5)',
+                'rgb(240, 240, 240)',
+                'rgba(235, 22, 22, 0.7)',
+                'rgba(235, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 1)',
+                'rgba(235, 22, 22, 0.5)',
+                'rgb(240, 240, 240)',
+                'rgba(235, 22, 22, 0.7)',
+                'rgba(235, 22, 22, 0.2)',
+                'rgba(235, 22, 22, 1)',
+                'rgba(235, 22, 22, 0.5)',
+                'rgb(240, 240, 240)',
+                'rgba(235, 22, 22, 0.7)'
             ],
-            hoverOffset: 4
+            borderColor: 'rgb(0, 0, 0)',
+            hoverOffset: 20
         }]
     };
     config = {
