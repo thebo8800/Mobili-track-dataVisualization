@@ -131,21 +131,22 @@
         data: {
             labels: fareArr,
             datasets: [{
-                label: "Miles/Dollar",
+                label: "Miles",
                 data: milesArr,
-                backgroundColor: "rgba(235, 22, 22, .7)",
+                backgroundColor: "rgba(235, 50, 122, .7)",
                 fill: true
-            },
-                // {
-                //     label: "Revenue",
-                //     data: [99, 135, 170, 130, 190, 180, 270],
-                //     backgroundColor: "rgba(235, 22, 22, .5)",
-                //     fill: true
-                // }
-            ]
+            }]
         },
         options: {
-
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function (value, index, ticks) {
+                            return '$' + value;
+                        },
+                    }
+                },
+            },
             responsive: true,
             elements: {
                 point: {
@@ -153,6 +154,12 @@
                 },
                 line: {
                     tension: 0.1
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Miles Traveled For Each Dollar Paid'
                 }
             }
         }
@@ -201,21 +208,6 @@
             label: 'My First Dataset',
             data: [2, 1, 0, 11, 17, 7, 11, 8, 41, 21, 27, 52, 180, 7, 11],
             backgroundColor: [
-                // 'rgb(255, 99, 132)',
-                // 'rgb(54, 162, 235)',
-                // 'rgb(255, 205, 86)',
-                // 'rgb(255, 99, 132)',
-                // 'rgb(54, 162, 235)',
-                // 'rgb(255, 205, 86)',
-                // 'rgb(255, 99, 132)',
-                // 'rgb(54, 162, 235)',
-                // 'rgb(255, 205, 86)',
-                // 'rgb(255, 99, 132)',
-                // 'rgb(54, 162, 235)',
-                // 'rgb(255, 205, 86)',
-                // 'rgb(255, 99, 132)',
-                // 'rgb(54, 162, 235)',
-                // 'rgb(255, 205, 86)',
 
                 'rgba(235, 22, 22, 0.2)',
                 'rgba(235, 22, 22, 1)',
@@ -245,10 +237,7 @@
 
 
     const ctx3 = document.getElementById('pieChart');
-    var myChart = new Chart(ctx3,
-        config
-    )
-
+    var myChart = new Chart(ctx3, config)
 
     // maintenance graph
     const ctx4 = document.getElementById('maintenance');
@@ -256,13 +245,13 @@
         type: 'line',
         data: {
             datasets: [{
-                backgroundColor: 'rgba(235, 22, 22, 0.7)',
+                backgroundColor: 'rgba(235, 22, 222, 0.5)',
                 label: 'Electric Vehicle',
                 data: ['0', '2100', '4200', '6300', '8400', '21000'],
                 fill: true,
             },
             {
-                backgroundColor: 'rgba(235, 22, 22, 0.3)',
+                backgroundColor: 'rgba(235, 322, 22, 0.8)',
                 label: 'Internal Combustion Vehicle',
                 data: ['150', '3000', '6000', '9000', '12000', '18000'],
                 fill: true,
@@ -272,7 +261,7 @@
 
         },
         options: {
-
+            responsive: true,
             plugins: {
                 title: {
                     display: true,
@@ -281,7 +270,6 @@
             },
             elements: {
                 line: {
-
                     tension: 0.13
                 }
             },
@@ -290,15 +278,9 @@
                     ticks: {
                         callback: function (value, index, ticks) {
                             return '$' + value;
-                        }
+                        },
                     }
                 },
-                x: {
-                    ticks: {
-
-                    }
-                },
-
             },
         }
     });
