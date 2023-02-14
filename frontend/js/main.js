@@ -93,8 +93,8 @@
         type: 'doughnut',
         data: data,
     };
-    const ctx = document.getElementById('worldwide-sales');
-    var myChart = new Chart(ctx,
+    const ctx1 = document.getElementById('worldwide-sales');
+    var myChart = new Chart(ctx1,
         config
     )
 
@@ -234,20 +234,75 @@
                 'rgba(235, 22, 22, 0.7)'
             ],
             borderColor: 'rgb(0, 0, 0)',
-            hoverOffset: 20
+            hoverOffset: 25
         }]
     };
     config = {
-        type: 'pie',
+        type: 'doughnut',
         data: data,
     };
 
 
 
-    const ctx5 = document.getElementById('pieChart');
-    var myChart = new Chart(ctx5,
+    const ctx3 = document.getElementById('pieChart');
+    var myChart = new Chart(ctx3,
         config
     )
+
+
+    // maintenance graph
+    const ctx4 = document.getElementById('maintenance');
+    new Chart(ctx4, {
+        type: 'line',
+        data: {
+            datasets: [{
+                backgroundColor: 'rgba(235, 22, 22, 0.7)',
+                label: 'Electric Vehicle',
+                data: ['0', '2100', '4200', '6300', '8400', '21000'],
+                fill: true,
+            },
+            {
+                backgroundColor: 'rgba(235, 22, 22, 0.3)',
+                label: 'Internal Combustion Vehicle',
+                data: ['150', '3000', '6000', '9000', '12000', '18000'],
+                fill: true,
+
+            }],
+            labels: ['0', '30,000 mi.', '60,000 mi.', '90,000 mi.', '120,000 mi.', '150,000 mi.'],
+
+        },
+        options: {
+
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Maintenece Cost Over Mileage'
+                }
+            },
+            elements: {
+                line: {
+
+                    tension: 0.13
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function (value, index, ticks) {
+                            return '$' + value;
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+
+                    }
+                },
+
+            },
+        }
+    });
+
 
 
 
