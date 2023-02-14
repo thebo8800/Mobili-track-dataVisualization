@@ -258,12 +258,6 @@
         },
         options: {
             responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Maintenece Cost Over Mileage'
-                }
-            },
             elements: {
                 line: {
                     tension: 0.13
