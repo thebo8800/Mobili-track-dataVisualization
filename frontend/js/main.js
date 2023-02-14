@@ -335,66 +335,78 @@
     const ctx5 = document.getElementById('organization');
     new Chart(ctx5, config);
 
-    // data = {
-    //     labels: [
-    //         'Drives car daily/weekly',
-    //         'Walks or rides bike daily/weekly',
-    //         'Takes taxi daily/weekly',
-    //         'Takes public transit daily/weekly'
 
 
-    //     ],
-    //     datasets: [{
-    //         label: 'Percentage Who Rideshare Daily/Weekly',
-    //         data: [63, 70, 55, 56],
-    //         fill: true,
-    //         backgroundColor: 'rgba(255, 99, 132, 0.2)',
-    //         borderColor: 'rgb(255, 99, 132)',
-    //         pointBackgroundColor: 'rgb(255, 99, 132)',
-    //         pointBorderColor: '#fff',
-    //         pointHoverBackgroundColor: '#fff',
-    //         pointHoverBorderColor: 'rgb(255, 99, 132)'
-    //     },
-    //     {
-    //         label: 'Percentage Who Rideshare Occassionally',
-    //         data: [85, 41, 3, 19],
-    //         fill: true,
-    //         backgroundColor: 'rgba(54, 162, 235, 0.2)',
-    //         borderColor: 'rgb(54, 162, 235)',
-    //         pointBackgroundColor: 'rgb(54, 162, 235)',
-    //         pointBorderColor: '#fff',
-    //         pointHoverBackgroundColor: '#fff',
-    //         pointHoverBorderColor: 'rgb(54, 162, 235)'
-    //     },
-    //     {
-    //         label: 'Percentage Who Never Rideshare',
-    //         data: [84, 31, 2, 9],
-    //         fill: true,
-    //         backgroundColor: 'rgba(80, 54, 203, 0.2)',
-    //         borderColor: 'rgba(80, 54, 203, 0.2)',
-    //         pointBackgroundColor: 'rgb(54, 162, 235)',
-    //         pointBorderColor: '#fff',
-    //         pointHoverBackgroundColor: '#fff',
-    //         pointHoverBorderColor: 'rgb(54, 162, 235)'
-    //     }
-    //     ]
-    // };
 
+    const ctx6 = document.getElementById('usage-age');
+    new Chart(ctx6, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                label: '% of Population',
+                data: ['51', '43', '24'],
+                fill: true,
+                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+            }],
+            labels: ['18-29 years', '30-49 years', '50+ years'],
 
-    // config = {
-    //     type: 'radar',
-    //     data: data,
-    //     options: {
-    //         elements: {
-    //             line: {
-    //                 borderWidth: 3
-    //             }
-    //         }
-    //     },
-    // };
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Rideshare Usage By Age'
+                }
+            },
+        },
+    });
 
-    ctx5 = document.getElementById('organization');
-    new Chart(ctx5, config);
+    const ctx7 = document.getElementById('usage-education');
+    new Chart(ctx7, {
+        type: 'bar',
+        data: {
+            datasets: [{
+                label: '% of Population Using Ride Share',
+                data: ['20', '36', '55'],
+                fill: true,
+                order: 1,
+                backgroundColor: 'rgba(233, 108, 41, 0.905)'
+            }, {
+                type: 'line',
+                label: '% of Overall Population',
+                data: ['22.3', '12', '65.7'],
+                fill: true,
+                order: 2,
+                backgroundColor: 'rgba(149, 236, 56, 0.905)'
+
+            }],
+            labels: ['HS or Less', 'Some College', 'College Graduate'],
+
+        },
+        options: {
+            elements: {
+                line: {
+                    tension: 0.1
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Rideshare Usage By Education'
+                }
+            },
+            scales: {
+                y: {
+                    ticks: {
+                        callback: function (value, index, ticks) {
+                            return value + ' %';
+                        }
+                    }
+                },
+            },
+
+        },
+    });
 
 
 })(jQuery);
