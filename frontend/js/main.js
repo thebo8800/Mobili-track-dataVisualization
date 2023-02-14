@@ -154,12 +154,6 @@
                     tension: 0.1
                 }
             },
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Distance Traveled For Each Dollar Paid'
-                }
-            }
         }
     });
 
