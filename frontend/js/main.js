@@ -291,14 +291,14 @@
         labels: [
             'Senior',
             'Student',
-            'Workforce',
+            'Workforce (non-healthcare)',
             'Healthcare',
             'Other',
 
         ],
         datasets: [{
-            label: 'Number of Ocurrences',
-            data: [6, 8, 8, 1, 3],
+            label: 'Percentage of Rideshare Users',
+            data: [23.08, 30.8, 30.8, 3.85, 11.54],
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
@@ -307,17 +307,17 @@
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: 'rgb(255, 99, 132)'
         },
-            // {
-            //     label: 'My Second Dataset',
-            //     data: [28, 48, 40, 19, 96, 27, 100],
-            //     fill: true,
-            //     backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            //     borderColor: 'rgb(54, 162, 235)',
-            //     pointBackgroundColor: 'rgb(54, 162, 235)',
-            //     pointBorderColor: '#fff',
-            //     pointHoverBackgroundColor: '#fff',
-            //     pointHoverBorderColor: 'rgb(54, 162, 235)'
-            // }
+        {
+            label: 'Percentage of Population',
+            data: [16.9, 5.74, 48.2, 14, 1.16],
+            fill: true,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgb(54, 162, 235)',
+            pointBackgroundColor: 'rgb(54, 162, 235)',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgb(54, 162, 235)'
+        }
         ]
     };
 
@@ -337,6 +337,66 @@
     const ctx5 = document.getElementById('organization');
     new Chart(ctx5, config);
 
+    // data = {
+    //     labels: [
+    //         'Drives car daily/weekly',
+    //         'Walks or rides bike daily/weekly',
+    //         'Takes taxi daily/weekly',
+    //         'Takes public transit daily/weekly'
+
+
+    //     ],
+    //     datasets: [{
+    //         label: 'Percentage Who Rideshare Daily/Weekly',
+    //         data: [63, 70, 55, 56],
+    //         fill: true,
+    //         backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    //         borderColor: 'rgb(255, 99, 132)',
+    //         pointBackgroundColor: 'rgb(255, 99, 132)',
+    //         pointBorderColor: '#fff',
+    //         pointHoverBackgroundColor: '#fff',
+    //         pointHoverBorderColor: 'rgb(255, 99, 132)'
+    //     },
+    //     {
+    //         label: 'Percentage Who Rideshare Occassionally',
+    //         data: [85, 41, 3, 19],
+    //         fill: true,
+    //         backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    //         borderColor: 'rgb(54, 162, 235)',
+    //         pointBackgroundColor: 'rgb(54, 162, 235)',
+    //         pointBorderColor: '#fff',
+    //         pointHoverBackgroundColor: '#fff',
+    //         pointHoverBorderColor: 'rgb(54, 162, 235)'
+    //     },
+    //     {
+    //         label: 'Percentage Who Never Rideshare',
+    //         data: [84, 31, 2, 9],
+    //         fill: true,
+    //         backgroundColor: 'rgba(80, 54, 203, 0.2)',
+    //         borderColor: 'rgba(80, 54, 203, 0.2)',
+    //         pointBackgroundColor: 'rgb(54, 162, 235)',
+    //         pointBorderColor: '#fff',
+    //         pointHoverBackgroundColor: '#fff',
+    //         pointHoverBorderColor: 'rgb(54, 162, 235)'
+    //     }
+    //     ]
+    // };
+
+
+    // config = {
+    //     type: 'radar',
+    //     data: data,
+    //     options: {
+    //         elements: {
+    //             line: {
+    //                 borderWidth: 3
+    //             }
+    //         }
+    //     },
+    // };
+
+    ctx5 = document.getElementById('organization');
+    new Chart(ctx5, config);
 
 })(jQuery);
 
