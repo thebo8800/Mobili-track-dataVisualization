@@ -30,12 +30,13 @@ If you would like top contribute to this project please contact chen.10881@osu.e
 
 ## Sources
 
-- https://www.caranddriver.com/shopping-advice/a32494027/ev-vs-gas-cheaper-to-own/
-- https://www.zippia.com/advice/ridesharing-industry-statistics/
-- https://www.statista.com/statistics/191734/us-civilian-labor-force-participation-rate-since-1990/#:~:text=This%20graph%20shows%20the%20civilian,participated%20in%20the%20job%20market
-- https://www.statista.com/statistics/183995/us-college-enrollment-and-projections-in-public-and-private-institutions/
-- https://www.americashealthrankings.org/explore/senior/measure/pct_65plus/state/ALL
-- https://www.census.gov/library/stories/2021/04/who-are-our-health-care-workers.html#:~:text=There%20were%2022%20million%20workers,American%20Community%20Survey%20(ACS)
+- [99P Labs, Honda](https://automobiles.honda.com/)https://www.linkedin.com/company/99p-labs/
+- [Car & Driver]https://www.caranddriver.com/shopping-advice/a32494027/ev-vs-gas-cheaper-to-own/
+- [Zippia]https://www.zippia.com/advice/ridesharing-industry-statistics/
+- [Statistica]https://www.statista.com/statistics/191734/us-civilian-labor-force-participation-rate-since-1990/#:~:text=This%20graph%20shows%20the%20civilian,participated%20in%20the%20job%20market
+- [Statistica]https://www.statista.com/statistics/183995/us-college-enrollment-and-projections-in-public-and-private-institutions/
+- [America's Health Rankings]https://www.americashealthrankings.org/explore/senior/measure/pct_65plus/state/ALL
+- [The Census]https://www.census.gov/library/stories/2021/04/who-are-our-health-care-workers.html#:~:text=There%20were%2022%20million%20workers,American%20Community%20Survey%20(ACS)
 
 
 ## License
