@@ -31,53 +31,31 @@
        "></script>
      <script src="main.js" type="module" defer></script>
      <script>
-          const fileName = "../data/tripRequest.csv";
+          const data = {
+               labels: [
+                    'Uber',
+                    'Lyft',
+                    'Other',
+               ],
+               datasets: [{
+                    data: [70, 29, 1],
+                    backgroundColor: [
+                         'rgba(255, 22, 22, 0.2)',
+                         'rgba(235, 22, 22, 0.5)',
+                         'rgba(235, 22, 22, 0.7)',
 
-
-          const ctx1 = document.getElementById('chart1');
-          new Chart(ctx1, {
-               type: 'line',
-               data: {
-                    datasets: [{
-                         label: 'Electric Vehicle',
-                         data: ['0', '2100', '4200', '6300', '8400', '21000'],
-                         fill: true,
-                    },
-                    {
-                         label: 'Internal Combustion Vehicle',
-                         data: ['150', '3000', '6000', '9000', '12000', '18000'],
-                         fill: true,
-
-                    }],
-                    labels: ['0', '30,000 mi.', '60,000 mi.', '90,000 mi.', '120,000 mi.', '150,000 mi.'],
-
-               },
-               options: {
-                    plugins: {
-                         title: {
-                              display: true,
-                              text: 'Maintenece Cost Over Mileage'
-                         }
-                    },
-                    elements: {
-                         line: {
-                              tension: 0.13
-                         }
-                    },
-                    scales: {
-                         y: {
-                              ticks: {
-                                   callback: function (value, index, ticks) {
-                                        return '$' + value;
-                                   }
-                              }
-                         },
-                    },
-                    alignToPixels: true
-               },
-
-          });
-
+                    ],
+                    hoverOffset: 25
+               },]
+          }
+          const config = {
+               type: 'pie',
+               data: data,
+          };
+          const ctx = document.getElementById('chart1');
+          var myChart = new Chart(ctx,
+               config
+          )
      </script>
      </body>
 

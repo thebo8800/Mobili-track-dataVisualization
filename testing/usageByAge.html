@@ -36,46 +36,24 @@
 
           const ctx1 = document.getElementById('chart1');
           new Chart(ctx1, {
-               type: 'line',
+               type: 'bar',
                data: {
                     datasets: [{
-                         label: 'Electric Vehicle',
-                         data: ['0', '2100', '4200', '6300', '8400', '21000'],
+                         label: '% of Population',
+                         data: ['51', '43', '24'],
                          fill: true,
-                    },
-                    {
-                         label: 'Internal Combustion Vehicle',
-                         data: ['150', '3000', '6000', '9000', '12000', '18000'],
-                         fill: true,
-
                     }],
-                    labels: ['0', '30,000 mi.', '60,000 mi.', '90,000 mi.', '120,000 mi.', '150,000 mi.'],
+                    labels: ['18-29 years', '30-49 years', '50+ years'],
 
                },
                options: {
                     plugins: {
                          title: {
                               display: true,
-                              text: 'Maintenece Cost Over Mileage'
+                              text: 'Rideshare Usage By Age'
                          }
                     },
-                    elements: {
-                         line: {
-                              tension: 0.13
-                         }
-                    },
-                    scales: {
-                         y: {
-                              ticks: {
-                                   callback: function (value, index, ticks) {
-                                        return '$' + value;
-                                   }
-                              }
-                         },
-                    },
-                    alignToPixels: true
                },
-
           });
 
      </script>

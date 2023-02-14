@@ -36,46 +36,47 @@
 
           const ctx1 = document.getElementById('chart1');
           new Chart(ctx1, {
-               type: 'line',
+               type: 'bar',
                data: {
                     datasets: [{
-                         label: 'Electric Vehicle',
-                         data: ['0', '2100', '4200', '6300', '8400', '21000'],
+                         label: '% of Population Using Ride Share',
+                         data: ['20', '36', '55'],
                          fill: true,
-                    },
-                    {
-                         label: 'Internal Combustion Vehicle',
-                         data: ['150', '3000', '6000', '9000', '12000', '18000'],
+                         order: 1
+                    }, {
+                         type: 'line',
+                         label: '% of Overall Population',
+                         data: ['22.3', '12', '65.7'],
                          fill: true,
+                         order: 2
 
                     }],
-                    labels: ['0', '30,000 mi.', '60,000 mi.', '90,000 mi.', '120,000 mi.', '150,000 mi.'],
+                    labels: ['HS or Less', 'Some College', 'College Graduate'],
 
                },
                options: {
+                    elements: {
+                         line: {
+                              tension: 0.1
+                         }
+                    },
                     plugins: {
                          title: {
                               display: true,
-                              text: 'Maintenece Cost Over Mileage'
-                         }
-                    },
-                    elements: {
-                         line: {
-                              tension: 0.13
+                              text: 'Rideshare Usage By Education'
                          }
                     },
                     scales: {
                          y: {
                               ticks: {
                                    callback: function (value, index, ticks) {
-                                        return '$' + value;
+                                        return value + ' %';
                                    }
                               }
                          },
                     },
-                    alignToPixels: true
-               },
 
+               },
           });
 
      </script>
