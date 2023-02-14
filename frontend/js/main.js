@@ -131,10 +131,10 @@
         data: {
             labels: fareArr,
             datasets: [{
-                label: "Miles",
+                label: "Miles Traveled",
                 data: milesArr,
-                backgroundColor: "rgba(235, 50, 122, .7)",
-                fill: true
+                backgroundColor: "rgba(0, 255, 255, 0.6)",
+                fill: true,
             }]
         },
         options: {
@@ -142,7 +142,7 @@
                 y: {
                     ticks: {
                         callback: function (value, index, ticks) {
-                            return '$' + value;
+                            return value + ' mi.';
                         },
                     }
                 },
@@ -159,7 +159,7 @@
             plugins: {
                 title: {
                     display: true,
-                    text: 'Miles Traveled For Each Dollar Paid'
+                    text: 'Distance Traveled For Each Dollar Paid'
                 }
             }
         }
