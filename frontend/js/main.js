@@ -234,8 +234,6 @@
         data: data,
     };
 
-
-
     const ctx3 = document.getElementById('pieChart');
     var myChart = new Chart(ctx3, config)
 
@@ -397,6 +395,7 @@
 
     ctx5 = document.getElementById('organization');
     new Chart(ctx5, config);
+
 
 })(jQuery);
 
