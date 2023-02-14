@@ -230,7 +230,7 @@
         }]
     };
     config = {
-        type: 'doughnut',
+        type: 'pie',
         data: data,
     };
 
