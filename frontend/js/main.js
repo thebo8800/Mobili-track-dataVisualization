@@ -1,6 +1,4 @@
 
-
-
 (function ($) {
     "use strict";
 
@@ -351,14 +349,6 @@
             labels: ['18-29 years', '30-49 years', '50+ years'],
 
         },
-        options: {
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Rideshare Usage By Age'
-                }
-            },
-        },
     });
 
     const ctx7 = document.getElementById('usage-education');
@@ -387,12 +377,6 @@
             elements: {
                 line: {
                     tension: 0.1
-                }
-            },
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Rideshare Usage By Education'
                 }
             },
             scales: {
