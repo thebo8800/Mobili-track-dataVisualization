@@ -22,7 +22,7 @@ Mobili-Track uses a number of open source projects to work properly:
 - [Chart.js](https://www.chartjs.org/docs/latest/samples/information.html) - JavaScript library for data visualization
 - [Papa-Parse](https://www.papaparse.com/) - .csv parser for JavaScript
 - [node.js](https://nodejs.org/en/about/) - evented I/O for the backend
-- [jQuery] - avaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax
+- [jQuery] - JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax
 
 ## Contributions
 
